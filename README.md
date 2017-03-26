@@ -9,5 +9,9 @@
 ## Misc
 1. `http://localhost:4444/grid/console` to see your nodes.
 
+## Config
+1. You can override the default values passed to the environment variables in the *docker-compose.yml* file. Or,
+1. You can modify the *.envrc* file directly.
+
 ## Local Setup
 To use your selenium grid, you can reference the grid url `http://localhost:4444/wd/hub` with your test runner.

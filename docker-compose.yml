@@ -5,20 +5,30 @@ services:
     container_name: selenium-hub
     image: selenium/hub
     ports:
-      - "4444:4444"
+      - "${PORT}:${PORT}"
+    environment:
+      - GRID_THROW_ON_CAPABILITY_NOT_PRESENT
+      - GRID_NEW_SESSION_WAIT_TIMEOUT
+      - GRID_JETTY_MAX_THREADS
+      - GRID_NODE_POLLING
+      - GRID_CLEAN_UP_CYCLE
+      - GRID_TIMEOUT
+      - GRID_BROWSER_TIMEOUT
+      - GRID_MAX_SESSION
+      - GRID_UNREGISTER_IF_STILL_DOWN_AFTER
 
   selenium-chrome:
     image: selenium/node-chrome
     depends_on:
       - selenium-hub
     environment:
-      - HUB_PORT_4444_TCP_ADDR=selenium-hub
-      - HUB_PORT_4444_TCP_PORT=4444
+      - HUB_PORT_4444_TCP_ADDR
+      - HUB_PORT_4444_TCP_PORT
 
   selenium-firefox:
     image: selenium/node-firefox
     depends_on:
       - selenium-hub
     environment:
-     - HUB_PORT_4444_TCP_ADDR=selenium-hub
-     - HUB_PORT_4444_TCP_PORT=4444
+     - HUB_PORT_4444_TCP_ADDR
+     - HUB_PORT_4444_TCP_PORT
