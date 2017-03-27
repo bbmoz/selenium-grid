@@ -4,7 +4,7 @@
 
 ## Tasks
 1. `make start` or `make` to start the grid with a hub, one chrome node, and one firefox node.
-1. `make scale nodes=<num-nodes>` to scale the number of nodes for each browser. By default, the number of nodes is 1.
+1. `make scale nodes=<num-nodes>` to scale the number of nodes for each browser (default is 1).
 
 ## Misc
 1. `http://localhost:4444/grid/console` to see your nodes.
@@ -18,6 +18,3 @@
 ## Local
 To use your selenium grid, reference the grid url `http://localhost:4444/wd/hub` with your test runner.
 
-## Deps
-1. [docker, docker-compose](https://docs.docker.com/docker-for-mac/install/)
-1. [direnv](https://github.com/direnv/direnv)
