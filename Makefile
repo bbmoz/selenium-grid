@@ -35,7 +35,7 @@ start: deps
 	$(MAKE) pre-task-msg name=$@
 	-docker stop selenium-hub
 	-docker rm selenium-hub
-	docker-compose up -d
+	docker-compose up -d --remove-orphans
 	docker ps
 	$(MAKE) post-task-msg name=$@
 
@@ -45,4 +45,3 @@ scale: deps
 	docker-compose scale selenium-firefox=$(nodes)
 	docker ps
 	$(MAKE) post-task-msg name=$@
-

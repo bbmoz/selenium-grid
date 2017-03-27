@@ -5,8 +5,9 @@ services:
     container_name: selenium-hub
     image: selenium/hub
     ports:
-      - "${PORT}:${PORT}"
+      - "${PORT}:4444"
     environment:
+      - JAVA_OPTS
       - GRID_THROW_ON_CAPABILITY_NOT_PRESENT
       - GRID_NEW_SESSION_WAIT_TIMEOUT
       - GRID_JETTY_MAX_THREADS
