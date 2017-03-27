@@ -5,7 +5,7 @@ services:
     container_name: selenium-hub
     image: selenium/hub
     ports:
-      - "${PORT}:4444"
+      - "${GRID_PORT}:4444"
     environment:
       - JAVA_OPTS
       - GRID_THROW_ON_CAPABILITY_NOT_PRESENT
